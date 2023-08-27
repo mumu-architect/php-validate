@@ -203,6 +203,7 @@ class Validate implements ValidateInterface {
         $rule = explode(',', $rule);
         return strlen($data) >= $rule[0] && strlen($data) <= $rule[1];
     }
+
     /**
      * [in description]
      * @param  [type] $rule [验证规则]
@@ -421,7 +422,7 @@ class Validate implements ValidateInterface {
     }
 
     /**
-     * 判刑数据是否存在某字段，合法
+     * 判断数据是否存在某字段，合法
      * @param $data
      * @param $fieldName
      * @return bool
@@ -607,7 +608,7 @@ class Validate implements ValidateInterface {
         $this->data[$fieldName]=$fieldValue;
     }
     /**
-     * 自定义方法过滤
+     * 自定义正则过滤
      * @param $filterRegex
      * @param $fieldValue
      * @param $ruleName
@@ -697,8 +698,6 @@ class Validate implements ValidateInterface {
         //获取当前场景规则
         $sceneRules = $this->getSceneRules();
 
-        print_r($sceneRules);
-
         //执行验证
         foreach ($sceneRules as $key => &$item) {
             //判断规则是否合法
@@ -710,7 +709,7 @@ class Validate implements ValidateInterface {
                 continue;
             }
             $fieldValue = $this->data[$item['fieldName']];
-            //验证系统规则验证
+            //系统规则验证
             if(array_key_exists('validationRule',$item)&&array_key_exists('systemRule',$item['validationRule'])&&!empty($item['validationRule']['systemRule'])){
                 $ruleName=$item['ruleName'];
                 $validationRuleSystemRule=$item['validationRule']['systemRule'];

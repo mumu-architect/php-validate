@@ -97,13 +97,13 @@ class  AValidate extends Validate
     }
     public function filterUsername($username){
         if(!empty($username)){
-
             settype($username,'float');
-            print_r($username);
+
             return $username;
         }
         return false;
     }
+
     public function filterUsername2($username){
         return !empty($username)?intval($username):false;
     }
