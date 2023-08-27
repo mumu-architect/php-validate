@@ -1,5 +1,5 @@
 <?php
-namespace qphp;
+namespace qphp\Validate;
 
 class Validate implements ValidateInterface {
 
