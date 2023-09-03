@@ -10,8 +10,10 @@ class ATest{
             'username'=>'99654.78ww12et32.45fewabc',
             'test'=>'2321xxc'
         ];
+        print("<pre>");
+        print_r($data);
         $validate = new AValidate();
-        $validateResult = $validate->setLanguage('cn')->rule($validate->rules)->message($validate->message)->check($data)->onScene('select')->Validate();
+        $validateResult = $validate->setLanguage('cn')->rule($validate->rules)->message($validate->message)->check($data)->onScene('insert')->Validate();
         if($validateResult !=true){
             $msg = $validate->getError();
             print("<pre>");

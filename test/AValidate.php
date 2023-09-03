@@ -20,7 +20,7 @@ class  AValidate extends Validator
             'ruleName' => 'rule2',
             'fieldName' => 'username',
             'validationRule' => ['systemRule' => 'require'],
-            'filter' => [
+            'fliter' => [
                 'systemFilter' => 'float|number',
                 'regex' => ['regexFilterUsername' => '/^[0-8]+/', 'regexFilterUsername2' => '/[a-c]+/'],
                 'func' => ['filterUsername','filterUsername2']

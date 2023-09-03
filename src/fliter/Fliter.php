@@ -23,7 +23,7 @@ class Fliter
         foreach ($rules as $i => $rule) {
             $result = self::systemFilterRule($rule, $fieldValue);
             if($result===false){
-                $messageKey = 'filter.regex.'.$rule;
+                $messageKey = 'fliter.regex.'.$rule;
                 $error_info = Message::getMessage($message,$ruleName,$messageKey,'ruleFilterError');
                 $errorInfoArray[]= $error_info;
             }else {
@@ -48,7 +48,7 @@ class Fliter
         foreach ($filterRegex as $k => $regexRule){
             $result = self::regexFilterRule($regexRule,$fieldValue);
             if($result===false){
-                $messageKey = 'filter.regex.'.$k;
+                $messageKey = 'fliter.regex.'.$k;
                 $error_info = Message::getMessage($message,$ruleName,$messageKey,'regexFilterError');
                 $errorInfoArray[]= $error_info;
             }else {
@@ -75,7 +75,7 @@ class Fliter
                 $fieldValue
             ),$obj);
             if($result===false){
-                $messageKey = 'filter.func.'.$methodName;
+                $messageKey = 'fliter.func.'.$methodName;
                 $error_info = Message::getMessage($message,$ruleName,$messageKey,'funFilterError');
                 $errorInfoArray[]= $error_info;
             }else{

@@ -293,29 +293,29 @@ class Validator implements ValidateInterface {
 
         //系统规则过滤
         $fieldValue = $this->data[$item['fieldName']];
-        if(array_key_exists('filter',$item)&&array_key_exists('systemFilter',$item['filter'])&&!empty($item['filter']['systemFilter'])){
+        if(array_key_exists('fliter',$item)&&array_key_exists('systemFilter',$item['fliter'])&&!empty($item['fliter']['systemFilter'])){
             $ruleName=$item['ruleName'];
             $fieldName=$item['fieldName'];
-            $filterSystem=$item['filter']['systemFilter'];
+            $filterSystem=$item['fliter']['systemFilter'];
             $errorInfoArray = Fliter::systemFilter($filterSystem,$fieldValue,$ruleName,$fieldName,$message,$data);
             $this->setError($errorInfoArray);
         }
 
         //自定义正则过滤
         $fieldValue = $this->data[$item['fieldName']];
-        if(array_key_exists('filter',$item)&&array_key_exists('regex',$item['filter'])&&!empty($item['filter']['regex'])){
+        if(array_key_exists('fliter',$item)&&array_key_exists('regex',$item['fliter'])&&!empty($item['fliter']['regex'])){
             $ruleName=$item['ruleName'];
             $fieldName=$item['fieldName'];
-            $filterRegex=$item['filter']['regex'];
+            $filterRegex=$item['fliter']['regex'];
             $errorInfoArray = Fliter::regexFilter($filterRegex,$fieldValue,$ruleName,$fieldName,$message,$data);
             $this->setError($errorInfoArray);
         }
         //自定义方法过滤
         $fieldValue = $this->data[$item['fieldName']];
-        if(array_key_exists('filter',$item)&&array_key_exists('func',$item['filter'])&&!empty($item['filter']['func'])){
+        if(array_key_exists('fliter',$item)&&array_key_exists('func',$item['fliter'])&&!empty($item['fliter']['func'])){
             $ruleName=$item['ruleName'];
             $fieldName=$item['fieldName'];
-            $filterFunc=$item['filter']['func'];
+            $filterFunc=$item['fliter']['func'];
             $errorInfoArray = Fliter::funcFilter($filterFunc,$fieldValue,$ruleName,$fieldName,$message,$data,$obj);
             $this->setError($errorInfoArray);
         }
