@@ -40,6 +40,13 @@ interface ValidateInterface
     public function onScene(string $scene): ValidateInterface;
 
     /**
+     * 设置语言
+     * @param string $language
+     * @return $this
+     */
+    public function setLanguage($language='en'):ValidateInterface;
+
+    /**
      * 主验证方法
      * @return bool
      */

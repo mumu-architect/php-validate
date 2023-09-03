@@ -169,7 +169,8 @@ class Validator implements ValidateInterface {
      * @param string $language
      * @return $this
      */
-    public function setLanguage($language='en'){
+    public function setLanguage($language='en'):ValidateInterface
+    {
         //设置消息英文
         Message::setMessage($language);
         return $this;
