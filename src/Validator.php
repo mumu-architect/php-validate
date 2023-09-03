@@ -49,6 +49,8 @@ class Validator implements ValidateInterface {
      */
     public function __construct()
     {
+        $this->data = [];
+        $this->error = [];
         //设置消息默认为英文
         Message::setMessage();
     }
@@ -175,12 +177,14 @@ class Validator implements ValidateInterface {
         Message::setMessage($language);
         return $this;
     }
+
     /**
      * 主验证方法
      * @return bool
      */
     public function Validate(): bool
     {
+        $this->error = [];
         //$data = $this->data;
         //$rules = $this->rule;
         $message = $this->message;

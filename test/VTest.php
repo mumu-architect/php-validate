@@ -13,7 +13,24 @@ class ATest{
         print("<pre>");
         print_r($data);
         $validate = new AValidate();
-        $validateResult = $validate->setLanguage('cn')->rule($validate->rules)->message($validate->message)->check($data)->onScene('insert')->Validate();
+
+        $validateResult = $validate->check($data)->onScene('update')->Validate();
+        if($validateResult !=true){
+            $msg = $validate->getError();
+            print("<pre>");
+            print_r($msg);
+
+            $msg2 = $validate->getAllErrors();
+            print("<pre>");
+            print_r($msg2);
+        }
+        $data1 = $validate->getData();
+        print("<pre>");
+        print_r($data1);
+
+        //$validate = new AValidate();
+        $validateResult = $validate->setLanguage('cn')->check($data)->onScene('select')->Validate();
+
         if($validateResult !=true){
             $msg = $validate->getError();
             print("<pre>");

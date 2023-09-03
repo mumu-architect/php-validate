@@ -6,7 +6,7 @@ use qphp\Validate\Validator;
 class  AValidate extends Validator
 {
 
-    public array $rules = [
+    public array $rule = [
         [
             'ruleName' => 'rule1',
             'fieldName' => 'username',
