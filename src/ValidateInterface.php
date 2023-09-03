@@ -16,6 +16,7 @@ interface ValidateInterface
      * @return Validate
      */
     public function message(array $message): ValidateInterface;
+
     /**
      * TODO:加载场景数据 ，可以不使用直接继承
      * @param array $scene

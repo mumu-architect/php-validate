@@ -3,13 +3,15 @@ namespace qphp\ValidateTest;
 
 class ATest{
     function test1(){
+        require_once "bootstrap.php";
+        require_once "AValidate.php";
         $data = [
             'name' => '8gAg:',
             'username'=>'99654.78ww12et32.45fewabc',
             'test'=>'2321xxc'
         ];
         $validate = new AValidate();
-        $validateResult = $validate->rule($validate->rules)->message($validate->message)->check($data)->onScene('select')->Validate();
+        $validateResult = $validate->setLanguage('cn')->rule($validate->rules)->message($validate->message)->check($data)->onScene('select')->Validate();
         if($validateResult !=true){
             $msg = $validate->getError();
             print("<pre>");
